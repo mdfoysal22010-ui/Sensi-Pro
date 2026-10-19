@@ -107,10 +107,10 @@ class _MainScreenState extends State<MainScreen> {
           Padding(
             padding: const EdgeInsets.only(right: 12),
             child: ActionChip(
-              backgroundColor: Colors.sky.withOpacity(0.2),
-              side: const BorderSide(color: Colors.sky),
-              avatar: const Icon(Icons.send, size: 14, color: Colors.sky),
-              label: const Text('Join TG', style: TextStyle(color: Colors.sky, fontSize: 11, fontWeight: FontWeight.bold)),
+              backgroundColor: Colors.lightBlueAccent.withOpacity(0.2),
+              side: const BorderSide(color: Colors.lightBlueAccent),
+              avatar: const Icon(Icons.send, size: 14, color: Colors.lightBlueAccent),
+              label: const Text('Join TG', style: TextStyle(color: Colors.lightBlueAccent, fontSize: 11, fontWeight: FontWeight.bold)),
               onPressed: () => launchUrl(Uri.parse('https://t.me/cf0122'), mode: LaunchMode.externalApplication),
             ),
           )
@@ -207,7 +207,7 @@ class _MainScreenState extends State<MainScreen> {
                   _buildSliderView('Red Dot', redDot, Colors.orangeAccent),
                   _buildSliderView('2x Scope', s2x, Colors.yellowAccent),
                   _buildSliderView('4x Scope', s4x, Colors.greenAccent),
-                  _buildSliderView('Sniper Scope', sniper, Colors.sky),
+                  _buildSliderView('Sniper Scope', sniper, Colors.lightBlueAccent),
                   _buildSliderView('Free Look', freeLook, Colors.purpleAccent),
                   const Divider(color: Colors.white12, height: 24),
                   Row(
