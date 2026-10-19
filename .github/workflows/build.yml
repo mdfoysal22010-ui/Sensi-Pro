@@ -24,9 +24,10 @@ jobs:
       with:
         channel: 'stable'
 
-    - name: Create Native Android Project
+    - name: Setup Android Project & Dependencies
       run: |
-        flutter create --org com.codex --project-name sensi_pro .
+        flutter create --platforms=android --org com.codex --project-name sensi_pro .
+        flutter pub add url_launcher
         flutter pub get
 
     - name: Build Release APK
@@ -35,5 +36,5 @@ jobs:
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
-        name: Sensi Pro
-        path: build/app/outputs/flutter-apk/app-release.apk
+        name: Sensi-Pro-APK
+        path: build/app/outputs/flutter-apk/*.apk
