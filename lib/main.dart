@@ -139,6 +139,7 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 
+  // --- TAB 1: GENERATOR ---
   Widget _buildGeneratorTab() {
     return SingleChildScrollView(
       padding: const EdgeInsets.all(16),
@@ -171,7 +172,10 @@ class _MainScreenState extends State<MainScreen> {
                   height: 48,
                   child: ElevatedButton(
                     onPressed: calculateSensi,
-                    style: ElevatedButton.styleFrom(backgroundColor: Colors.red, shape: BorderRadius.circular(12)),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red,
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                    ),
                     child: const Text('সেনসি তৈরি করুন (২০০ স্কেল)', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
                   ),
                 ),
@@ -275,6 +279,7 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 
+  // --- TAB 2: PRO PLAYERS ---
   Widget _buildProPlayersTab() {
     final players = [
       {'name': 'RAISTAR', 'style': 'Movement God', 'gen': '198', 'red': '195', 'dpi': '440', 'btn': '48%'},
@@ -299,7 +304,12 @@ class _MainScreenState extends State<MainScreen> {
             title: Text(p['name']!, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
             subtitle: Text(p['style']!, style: const TextStyle(fontSize: 11, color: Colors.redAccent)),
             trailing: ElevatedButton(
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.red.withOpacity(0.2), foregroundColor: Colors.red, elevation: 0),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red.withOpacity(0.2),
+                foregroundColor: Colors.red,
+                elevation: 0,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+              ),
               onPressed: () {
                 showModalBottomSheet(
                   context: context,
@@ -317,7 +327,10 @@ class _MainScreenState extends State<MainScreen> {
                         Text('DPI: ${p['dpi']} | Button: ${p['btn']}'),
                         const SizedBox(height: 12),
                         ElevatedButton(
-                          style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.red,
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                          ),
                           onPressed: () {
                             copyToClipboard('🔥 ${p['name']} Sensi 🔥\nGeneral: ${p['gen']}\nRed Dot: ${p['red']}\nDPI: ${p['dpi']}\nButton: ${p['btn']}');
                             Navigator.pop(ctx);
@@ -337,6 +350,7 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 
+  // --- TAB 3: ABOUT TAB ---
   Widget _buildAboutTab() {
     return SingleChildScrollView(
       padding: const EdgeInsets.all(16),
@@ -364,7 +378,10 @@ class _MainScreenState extends State<MainScreen> {
             height: 48,
             child: ElevatedButton.icon(
               onPressed: () => launchUrl(Uri.parse('https://t.me/cf0122'), mode: LaunchMode.externalApplication),
-              style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF0284C7), shape: BorderRadius.circular(12)),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF0284C7),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              ),
               icon: const Icon(Icons.send, color: Colors.white),
               label: const Text('টেলিগ্রাম চ্যানেলে জয়েন করুন', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
             ),
